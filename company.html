@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>JobPortal - Free Bootstrap 4 Template by Colorlib</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+      <title>JobBuddy - Buddy for your dream candidate</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+      <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+      <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+      <link rel="stylesheet" href="css/animate.css">
+  
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="css/magnific-popup.css">
+  
+      <link rel="stylesheet" href="css/aos.css">
+  
+      <link rel="stylesheet" href="css/ionicons.min.css">
+  
+      <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+      <link rel="stylesheet" href="css/jquery.timepicker.css">
+  
+  
+      <link rel="stylesheet" href="css/flaticon.css">
+      <link rel="stylesheet" href="css/icomoon.css">
+      <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     
@@ -68,14 +68,15 @@
 			     <form action="#" class="p-5 bg-white">
               
               <div class="row form-group">
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label for="option-price-1">
-                    <input type="checkbox" id="option-price-1"> <span class="text-success">Rs.50000</span> For 30 days
-                  </label>
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <h5> Cost  To  Company(CTC)</h5>
+                   <label for="ctcStart">From: </label><input type="numeric"  class="form-control">
+                   <label for="ctcEnd">TO: </label> <input type="numeric"  class="form-control form-inline">
                 </div>
                 <div class="col-md-12 mb-3 mb-md-0">
-                  <label for="option-price-2">
-                    <input type="checkbox" id="option-price-2"> <span class="text-success">Rs. 30000</span> / Monthly Recurring
+                  <label for="frequency" class="radio-inline">
+                    <input type="radio" id="option-mon" name="salary_frequency">  Monthly 
+                    <input type="radio" id="option-anu" name="salary_frequency">  Annually 
                   </label>
                 </div>
               </div>
@@ -128,10 +129,35 @@
               <div class="row form-group mb-4">
                 <div class="col-md-12"><h3>Location</h3></div>
                 <div class="col-md-12 mb-3 mb-md-0">
-                  <input type="text" class="form-control" placeholder="Bangolare, INDIA
-">
+                  <input type="text" class="form-control" placeholder="Bangolare, INDIA">
                 </div>
               </div>
+              <div class="row form-group mb-4">
+                  <div class="col-md-12"><h3>Educational Qualification</h3></div>
+                  <div class="col-md-12 mb-3 mb-md-0">
+                    <input type="text" class="form-control" placeholder="B.Tech, M.Tech">
+                  </div>
+              </div>
+
+              <div class="row form-group">
+                  <div class="col-md-12"><h3>Minimum Experience</h3></div>
+                  <div class="col-md-12 mb-3 mb-md-0">
+                    <label for="option-job-type-1">
+                      <input type="radio" id="option-job-type-1" name="job-type"> 0-2 years
+                    </label>
+                  </div>
+                  <div class="col-md-12 mb-3 mb-md-0">
+                    <label for="option-job-type-2">
+                      <input type="radio" id="option-job-type-2" name="job-type"> 2-5 years
+                    </label>
+                  </div>
+  
+                  <div class="col-md-12 mb-3 mb-md-0">
+                    <label for="option-job-type-3">
+                      <input type="radio" id="option-job-type-3" name="job-type"> >5 Years
+                  </div>
+  
+                </div>
 
               <div class="row form-group">
                 <div class="col-md-12"><h3>Job Description</h3></div>
@@ -175,63 +201,63 @@
     </div>
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
-      <div class="container" id="footer-contact">
-        <div class="row mb-5">
-        	<div class="col-md">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">About</h2>
-              <p>With Job Buddy, we are working to help companies find the right candidate at the lowest
-                possible cost with minimum effort using natural language processing and AI.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                <li class="ftco-animate" data-aos="zoom-in-up"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate" data-aos="zoom-in-up"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate" data-aos="zoom-in-up"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
+        <div class="container" id="footer-contact">
+            <div class="row mb-5">
+              <div class="col-md">
+                 <div class="ftco-footer-widget mb-4">
+                  <h2 class="ftco-heading-2">About</h2>
+                  <p>With Job Buddy, we are working to help companies find the right candidate at the lowest
+                    possible cost with minimum effort using natural language processing and AI.</p>
+                  <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                    <li class="ftco-animate" data-aos="zoom-in-up"><a href="#"><span class="icon-twitter"></span></a></li>
+                    <li class="ftco-animate" data-aos="zoom-in-up"><a href="#"><span class="icon-facebook"></span></a></li>
+                    <li class="ftco-animate" data-aos="zoom-in-up"><a href="#"><span class="icon-instagram"></span></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                  <!-- <h2 class="ftco-heading-2">Employers</h2> -->
+                  <ul class="list-unstyled">
+                    <li><a href="#" class="py-2 d-block">Home</a></li>
+                    <li><a href="#" class="py-2 d-block">Register as Candidate</a></li>
+                    <li><a href="#" class="py-2 d-block">Post a Job</a></li>
+                    <li><a href="#" class="py-2 d-block">Register as Freelancer</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="ftco-footer-widget mb-4 ml-md-4">
+                  <!-- <h2 class="ftco-heading-2">Workers</h2> -->
+                  <ul class="list-unstyled">
+                    <li><a href="#faqs" class="py-2 d-block">FAQs</a></li>
+                    <li><a href="#" class="py-2 d-block">Terms and Conditions</a></li>
+                    <li><a href="#" class="py-2 d-block">Privacy</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                  <h2 class="ftco-heading-2">Have a Questions?</h2>
+                  <div class="block-23 mb-3">
+                    <ul>
+                      <li><span class="icon icon-map-marker"></span><span class="text">INDIA</span></li>
+                      <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 392 3929 210</span></a></li>
+                      <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 text-center">
+    
+                <p><!-- Template is licensed under CC BY 3.0. -->
+      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">BETA</a>
+      <!--  Template is licensed under CC BY 3.0. --></p>
+              </div>
             </div>
           </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <!-- <h2 class="ftco-heading-2">Employers</h2> -->
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Home</a></li>
-                <li><a href="#" class="py-2 d-block">Register as Candidate</a></li>
-                <li><a href="#" class="py-2 d-block">Post a Job</a></li>
-                <li><a href="#" class="py-2 d-block">Register as Freelancer</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <!-- <h2 class="ftco-heading-2">Workers</h2> -->
-              <ul class="list-unstyled">
-                <li><a href="#faqs" class="py-2 d-block">FAQs</a></li>
-                <li><a href="#" class="py-2 d-block">Terms and Conditions</a></li>
-                <li><a href="#" class="py-2 d-block">Privacy</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">INDIA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p> <!--Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Beta</a>
-          </p>
-          </div>
-        </div>
-      </div>
     </footer>
     
   

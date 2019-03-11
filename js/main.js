@@ -182,7 +182,7 @@
 				$('.number').each(function(){
 					var $this = $(this),
 						num = $this.data('number');
-						console.log(num);
+						//console.log(num);
 					$this.animateNumber(
 					  {
 					    number: num,
@@ -303,3 +303,30 @@
 
 })(jQuery);
 
+// Accordion js
+
+// var acc = document.getElementsByClassName("faq_accordion");
+// var i;
+
+// for (i = 0; i < acc.length; i++) {
+//   acc[i].addEventListener("click", function() {
+//     this.classList.toggle("active");
+//     var panel = this.nextElementSibling;
+//     if (panel.style.maxHeight){
+//       panel.style.maxHeight = null;
+//     } else {
+//       panel.style.maxHeight = panel.scrollHeight + "px";
+//     } 
+//   });
+// }
+$(".faq_accordion").on("click", function(){
+	
+	$(this).find('.fas').toggleClass('fa-plus-circle fa-minus-circle');
+	console.log($(this));
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+})
