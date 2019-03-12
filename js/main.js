@@ -330,3 +330,10 @@ $(".faq_accordion").on("click", function(){
       panel.style.maxHeight = panel.scrollHeight + "px";
     } 
 })
+
+//DATE-Picker
+$('#datePicker').datepicker({
+	format: 'dd/mm/yyyy',
+	// todayHighlight:'TRUE',
+	autoclose: true,
+})
