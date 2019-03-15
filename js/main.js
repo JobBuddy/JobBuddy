@@ -303,22 +303,8 @@
 
 })(jQuery);
 
-// Accordion js
 
-// var acc = document.getElementsByClassName("faq_accordion");
-// var i;
-
-// for (i = 0; i < acc.length; i++) {
-//   acc[i].addEventListener("click", function() {
-//     this.classList.toggle("active");
-//     var panel = this.nextElementSibling;
-//     if (panel.style.maxHeight){
-//       panel.style.maxHeight = null;
-//     } else {
-//       panel.style.maxHeight = panel.scrollHeight + "px";
-//     } 
-//   });
-// }
+//FAQ Accordian
 $(".faq_accordion").on("click", function(){
 	
 	$(this).find('.fas').toggleClass('fa-plus-circle fa-minus-circle');
@@ -337,3 +323,56 @@ $('#datePicker').datepicker({
 	// todayHighlight:'TRUE',
 	autoclose: true,
 })
+
+
+//JobTitle Autocompletion
+
+function autocompleteData(url){
+	if(url === 'jobTitle.json')
+	{
+		var dataList = document.getElementById('jobTitle');
+		var input = document.getElementById('job_title');
+	} else {
+		var dataList = document.getElementById('jobLocation');
+		var input = document.getElementById('location');
+	}
+
+	var url = "../js/"+url;
+	//console.log(url+" "+this.url);
+
+	var request = new XMLHttpRequest();
+
+	// Handle state changes for the request.
+	request.onreadystatechange = function(response) {
+		if (request.readyState === 4) {
+			if (request.status === 200) {
+				// Parse the JSON
+				var jsonOptions = JSON.parse(request.responseText);
+				//console.log(jsonOptions.array[0]);
+
+				// Loop over the JSON array.
+				jsonOptions.array.forEach(function(item) {
+					// Create a new <option> element.
+					var option = document.createElement('option');
+					// Set the value using the item in the JSON array.
+					option.value = item;
+					// Add the <option> element to the <datalist>.
+					dataList.appendChild(option);
+				});
+
+				// Update the placeholder text.
+				input.placeholder = "UI/UX Designer";
+			} else {
+				// An error occured :(
+				input.placeholder = "Couldn't load datalist options :(";
+			}
+		}
+	};
+
+	// Update the placeholder text.
+	input.placeholder = "Loading options...";
+
+	// Set up and make the request.
+	request.open('GET', url, true);
+	request.send();
+}
