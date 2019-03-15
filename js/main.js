@@ -332,9 +332,11 @@ function autocompleteData(url){
 	{
 		var dataList = document.getElementById('jobTitle');
 		var input = document.getElementById('job_title');
+		var placehold = "UI/UX Designer";
 	} else {
 		var dataList = document.getElementById('jobLocation');
 		var input = document.getElementById('location');
+		var placehold = "Bangalore, India";
 	}
 
 	var url = "../js/"+url;
@@ -361,7 +363,7 @@ function autocompleteData(url){
 				});
 
 				// Update the placeholder text.
-				input.placeholder = "UI/UX Designer";
+				input.placeholder = placehold;
 			} else {
 				// An error occured :(
 				input.placeholder = "Couldn't load datalist options :(";

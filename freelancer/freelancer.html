@@ -83,21 +83,30 @@
 								<input type="tel" placeholder="Phone Number" name="phone" required />
 							</div>
 							<div class="input">
-								<select required>
+									<input type="text" id="QualificationInput" list="Qualification" placeholder="Qualification">
+									<datalist id="Qualification">
+										<option value="Qualification"></option>
+										<option value="B.E/B.Tech"></option>
+										<option value="M.E/M.Tech"></option>
+										<option value="B.sc"></option>
+									</datalist>
+								<!-- <select required>
 									<option value="Qualification">Qualification</option>
-								  <option value="B.E/B.Tech">B.E/B.Tech</option>
-								  <option value="M.E/M.Tech">M.E/M.Tech</option>
-								  <option value="B.sc">B.sc</option>
-								</select>
+								  	<option value="B.E/B.Tech">B.E/B.Tech</option>
+								  	<option value="M.E/M.Tech">M.E/M.Tech</option>
+								  	<option value="B.sc">B.sc</option>
+								</select> -->
 							</div>
-							<div class="input">
-
-								<select required>
+							<div class = "input">
+							<!-- <label class="font-weight-bold" for="fullname">Location</label> -->
+                    		<input type="text" id="location" list="jobLocation" onfocusin="autocompleteData('locationData.json')" placeholder="Bangolare, INDIA">
+                    		<datalist id="jobLocation"></datalist>
+								<!-- <select required>
 	  							<option value="Location">Location</option>
 	  							<option value="Banglore">Banglore</option>
 	  							<option value="Hyderabad">Hyderabad</option>
 	  							<option value="Noida">Noida</option>
-								</select>
+								</select> -->
 							</div>
 							<div class="input">
 
@@ -139,6 +148,10 @@
 
 		</div>
 
+		<script src="../js/main.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>
