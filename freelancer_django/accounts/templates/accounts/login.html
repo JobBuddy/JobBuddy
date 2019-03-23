@@ -1,0 +1,23 @@
+{% extends 'accounts/home.html' %}
+<body>
+{% block content %}
+<form method="post" action="{% url 'accounts:login' %}">
+	{% csrf_token %}
+	<h3 class="legend">Login Here</h3>
+        <div class="input">
+            <span class="fa fa-envelope-o" aria-hidden="true"></span>
+            <input type="text" placeholder="Username" name="username" required />
+        </div>
+        <div class="input">
+            <span class="fa fa-key" aria-hidden="true"></span>
+            <input type="password" placeholder="Password" name="password" required />
+        </div>
+        <div class="input">
+            <button type="submit" class="btn submit">Login</button>
+            </div>
+            <a href="#section4" class="bottom-text-w3ls">Forgot Password?</a>
+
+</form>
+{% endblock %}
+</body>
+</html>

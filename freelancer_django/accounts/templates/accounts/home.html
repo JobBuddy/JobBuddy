@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Buddy|Freelancer</title>
+  <!-- Meta tag Keywords -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <script>
+    addEventListener("load", function () {
+      setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+  </script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'accounts/css/freelancer-style.css' %}" type="text/css"/>
+  <!-- Style-CSS -->
+  <link href="{% static 'accounts/css/freelancer-font-awesome.min.css' %}" rel="stylesheet">
+</head>
+<body>
+  
+  <div class="topnav">
+  <a class="active" href="#">Home</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+<div class="main-bg">
+    <!-- title -->
+    <h1>Job Buddy</h1>
+    <!-- //title -->
+    <div class="sub-main-w3">
+
+      <div class="image-style">
+
+      </div>
+      <!-- vertical tabs -->
+      <div class="vertical-tab">
+        <div id="section1" class="section-w3ls">
+
+          <input type="radio" name="sections" id="option1" checked>
+          <label for="option1" class="icon-left-w3pvt"><span class="fa fa-user-circle" aria-hidden="true"></span>Login</label>
+  
+    </div>
+    <div id="section2" class="section-w3ls">
+          <input type="radio" name="sections" id="option2">
+          <label for="option2" class="icon-left-w3pvt"><span class="fa fa-pencil-square" aria-hidden="true"></span>Register</label>
+        </div>
+    <div id="section3" class="section-w3ls">
+          <input type="radio" name="sections" id="option3">
+          <label for="option3" class="icon-left-w3pvt"><span class="fa fa-lock" aria-hidden="true"></span>Forgot Password?</label>
+          </div>   
+      <!-- //vertical tabs -->
+      <div class="clear"></div>
+    </div>
+{% block content %}
+  <main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+  </main>
+  
+  {% endblock %}
+    </div>
+  </div>
+   
+
+
+
+</body>
+</html>
