@@ -1,0 +1,25 @@
+{% extends 'accounts/freelancer_home.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block content %}
+
+<div class="content-section">
+  {% if registered %}
+    <h1>Thank You For Registering </h1>
+  {% else %}
+    <form method="POST"  enctype= multipart/form-data>
+      {% csrf_token %}
+       <fieldset class="form-group">
+           <h3 class="legend">Register Here</h3>
+           {{ user_form|crispy }}
+           {{ profile_form|crispy }}
+           <button class="btn btn-primary" type="submit">Sign Up</button>
+       </fieldset>
+   </form>
+   <div class = "border-top pt-3">
+       <small class = "text-muted"> Already Have A Account ? <a class = "ml-2" href=" # "> Sign In </a></small>
+   </div>
+   {% endif %}
+ </div>
+ 
+{% endblock %}

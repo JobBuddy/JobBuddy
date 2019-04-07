@@ -1,0 +1,911 @@
+{% extends "accounts/base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+
+
+    <!-- END nav -->
+
+    <div class="hero-wrap js-fullheight" style="background-image: url({% static 'accounts/images/bg_2.png' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true" style="height: 747px;">
+          <div class="col-xl-10 ftco-animate mb-5 pb-5" data-scrollax=" properties: { translateY: '70%' }">
+            <p class="mb-4 mt-5 pt-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+              Millions jobs, Easy Job Listing, Freelance Recruiters
+            </p>
+            <h1 class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Your Job <br><span>BUDDY is Here</span></h1>
+
+            <div class="ftco-search">
+              <div class="row">
+                <div class="col-md-12 nav-link-wrap">
+                  <div class="nav nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active mr-md-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Find a Job</a>
+
+                    <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Find a Candidate</a>
+
+                  </div>
+                </div>
+                <div class="col-md-12 tab-wrap">
+
+                  <div class="tab-content p-4" id="v-pills-tabContent">
+
+                    <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
+
+                      <form method = 'POST' class="search-job">
+                        {% csrf_token %}
+                        <div class="row">
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <div class="icon"><span class="icon-briefcase"></span></div>
+                                <input type="text" class="form-control" placeholder="Software Developer" name="job_title">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <div class="select-wrap">
+                                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                  <input type="text" class="form-control" placeholder="OLA" name="company">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <div class="icon"><span class="icon-map-marker"></span></div>
+                                <input type="text" class="form-control" placeholder="Internship" name="job_type">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <div class="icon"><span class="icon-map-marker"></span></div>
+                                <input type="text"  class="form-control" placeholder="Ranchi" name="Location">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <div class="icon"><span class="icon-map-marker"></span></div>
+                                <input type="text" class="form-control" placeholder="BE" name="Qualification"/>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <div class="icon"><span class="icon-map-marker"></span></div>
+                                <input type="text" class="form-control" placeholder="1" name="min_exp"/>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <input type="submit" value="Search" class="form-control btn btn-primary">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-performance-tab">
+                      <form action="#" class="search-job">
+                        <div class="row">
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <div class="icon"><span class="icon-user"></span></div>
+                                <input type="text" class="form-control" placeholder="eg. Adam Scott">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <div class="select-wrap">
+                                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                  <select name="" id="" class="form-control">
+                                    <option value="">Category</option>
+                                    <option value="">Full Time</option>
+                                    <option value="">Part Time</option>
+                                    <option value="">Freelance</option>
+                                    <option value="">Internship</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <div class="icon"><span class="icon-map-marker"></span></div>
+                                <input type="text" class="form-control" placeholder="Location">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <input type="submit" value="Search" class="form-control btn btn-primary">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+
+
+
+                      <!-- <form method="post">
+                        {% csrf_token %}
+                        <h3 class="legend">Search Using Job Title</h3>
+                            <div class="input">
+                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                                <label for="job_title">Job Title</label>
+                                <input type="text" placeholder="Software Developer" name="job_title" />
+                            </div>
+                            <br>
+                            <div class="input">
+                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                                <label for="company">Company</label>
+                                <input type="text" placeholder="OLA" name="company"/>
+                            </div>
+                            <br>
+                            <div class="input">
+                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                                <label for="job_type">Job Type</label>
+                                <input type="text" placeholder="Internship" name="job_type"/>
+                            </div>
+                            <br>
+                            <div class="input">
+                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                                <label for="Location">Location</label>
+                                <input type="text" placeholder="Ranchi" name="Location"/>
+                            </div>
+                            <br>
+                            <div class="input">
+                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                                <label for="Qualification">Qualification</label>
+                                <input type="text" placeholder="Software Developer" name="Qualification"/>
+                            </div>
+                            <br>
+                            <div class="input">
+                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                                <label for="min_exp">Minimum experience</label>
+                                <input type="text" placeholder="Software Developer" name="min_exp"/>
+                            </div>
+                            {% if form.errors %}
+                           Error messaging
+                            <div id="errors">
+                                <div class="inner">
+                                    <p class="alert">There were some errors in the information you entered. Please correct the following:</p>
+                                    {{ form.non_field_errors }}
+                                    <ul>
+                                        {% for field in form %}
+                                            {% if field.errors %}<li>{{ field.label }}: {{ field.errors|striptags }}</li>{% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                             /Error messaging
+                            {% endif %}
+                            <div class="input">
+                                <button type="submit" class="btn submit">Search</button>
+                            </div>
+                          </form> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <section class="ftco-section services-section bg-light">
+      <div class="container">
+        <div class="row d-flex">
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block">
+              <div class="icon"><span class="flaticon-resume"></span></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Search Millions of Jobs <br> Get Reviewd By Recruiters</br></h3>
+                <p> We have jobs for everyone, whether you are from technical backg...</p>
+                <a href="#" data-toggle="modal" data-target="#candidateFeatures"> Know More </a>
+              </div>
+            </div>
+          </div>
+
+           <!-- Modal -->
+           <div class="modal fade" id="candidateFeatures" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Get Your Dream Job</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+                  </div>
+                  <div class="modal-body">
+                      <p> We have jobs for everyone, whether you are from technical background, Management background
+                          or any other fields. Even if you want to work as a freelancer, we have
+                          a lot of options for you.
+                      </p>
+                      <p> Do you want to know what happens to your Job Application or whether you are eligible for any job or not.
+                          We will help you in knowing status of your job application and also review your CV.
+                      </p>
+                  </div>
+                  <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+              </div>
+          </div>
+          <!-- Candidate Modal Ends -->
+
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block">
+              <div class="icon"><span class="flaticon-collaboration"></span></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Work as Freelance Recruiter</h3>
+                <p> Are you a recruiter and want to help ...</p>
+                <a href="#" data-toggle="modal" data-target="#freelanceFeatures"> Know More </a>
+              </div>
+            </div>
+          </div>
+<!-- Freelace Modal -->
+          <div class="modal fade" id="freelanceFeatures" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Freelance Recruiter</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+                  </div>
+                  <div class="modal-body">
+                      <p> Are you a recruiter and want to help multiple companies in selecting right candidate? We
+                          will give you a platform to work as a freelance recruiter and earn extra money.
+                      </p>
+                  </div>
+                  <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+              </div>
+          </div>
+<!-- Freelace modal ends -->
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block">
+              <div class="icon"><span class="flaticon-promotions"></span></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Find Top Candidates</h3>
+                <p>Companies face a hard time in find...</p>
+                <a href="#" data-toggle="modal" data-target="#companyFeatures"> Know More </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Company Modal starts -->
+          <div class="modal fade" id="companyFeatures" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Find Top Candidate</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+                  </div>
+                  <div class="modal-body">
+                      <p>Companies face a hard time in finding right candidate due to lot of unrelated responses and
+                          many time they end up with selecting less talented candidate. Our platform gives them only most related
+                        CVs for their job posts.
+                      </p>
+                  </div>
+                  <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+              </div>
+          </div>
+          <!-- company modal ends -->
+      </div>
+    </section>
+
+    <section class="ftco-section ftco-counter">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <span class="subheading">Categories work wating for you</span>
+            <h2 class="mb-4"><span>Current</span> Job Posts</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 ftco-animate">
+            <ul class="category">
+              <li><a href="#">Web Development <span class="number" data-number="1000">0</span></a></li>
+              <li><a href="#">Graphic Designer <span class="number" data-number="1000">0</span></a></li>
+              <li><a href="#">Multimedia <span class="number" data-number="2000">0</span></a></li>
+              <li><a href="#">Advertising <span class="number" data-number="900">0</span></a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 ftco-animate">
+            <ul class="category">
+              <li><a href="#">Education &amp; Training <span class="number" data-number="3500">0</span></a></li>
+              <li><a href="#">English <span class="number" data-number="1560">0</span></a></li>
+              <li><a href="#">Social Media <span class="number" data-number="1000">0</span></a></li>
+              <li><a href="#">Writing <span class="number" data-number="2500">0</span></a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 ftco-animate">
+            <ul class="category">
+              <li><a href="#">PHP Programming <span class="number" data-number="5500">0</span></a></li>
+              <li><a href="#">Project Management <span class="number" data-number="2000">0</span></a></li>
+              <li><a href="#">Finance Management <span class="number" data-number="800">0</span></a></li>
+              <li><a href="#">Office &amp; Admin <span class="number" data-number="7000">0</span></a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 ftco-animate">
+            <ul class="category">
+              <li><a href="#">Web Designer <span><span class="number" data-number="8000">0</span></span></a></li>
+              <li><a href="#">Customer Service <span class="number" data-number="4000">0</span></a></li>
+              <li><a href="#">Marketing &amp; Sales <span class="number" data-number="3300">0</span></a></li>
+              <li><a href="#">Software Development <span class="number" data-number="1356">0</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- Recent job post section -->
+    <section class="ftco-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <span class="subheading">Recently Added Jobs</span>
+            <h2 class="mb-4"><span>Recent</span> Jobs</h2>
+          </div>
+        </div>
+        <!-- Recent job posts -->
+
+
+        {% for job in job_filter %}
+            <div class="col-md-12 ftco-animate">
+
+            <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+
+              <div class="mb-4 mb-md-0 mr-5">
+                <div class="job-post-item-header d-flex align-items-center">
+                  <h2 class="mr-3 text-black h3">{{ job.job_title }}</h2>
+                  <div class="badge-wrap">
+                   <span class="bg-primary text-white badge py-2 px-3">{{ job.job_type }}</span>
+                  </div>
+                </div>
+                <div class="job-post-item-body d-block d-md-flex">
+                  <div class="mr-3"><span class="icon-layers"></span> <a href="#">{{ job.company }}</a></div>
+                  <div><span class="icon-my_location"></span> <span>{{ job.Location }}</span></div>
+                </div>
+              </div>
+
+              <div class="ml-auto d-flex">
+                {% if user.is_authenticated and user.is_candidate %}
+                  <a href="{% url 'comapnyjobs' %}" class="btn btn-primary py-2 mr-1">Apply Job</a>
+                {% else %}
+                  <a href="{% url 'register' %}" class="btn btn-primary py-2 mr-1">Apply Job</a>
+                {% endif %}
+                <a href="#" class="btn btn-secondary rounded-circle btn-favorite d-flex align-items-center icon">
+                  <span class="icon-heart"></span>
+                </a>
+              </div>
+            </div>
+          </div><!-- end -->
+
+        {% endfor %}
+
+        {% for job in jobs %}
+            <div class="col-md-12 ftco-animate">
+
+            <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+
+              <div class="mb-4 mb-md-0 mr-5">
+                <div class="job-post-item-header d-flex align-items-center">
+                  <h2 class="mr-3 text-black h3">{{ job.job_title }}</h2>
+                  <div class="badge-wrap">
+                   <span class="bg-primary text-white badge py-2 px-3">{{ job.job_type }}</span>
+                  </div>
+                </div>
+                <div class="job-post-item-body d-block d-md-flex">
+                  <div class="mr-3"><span class="icon-layers"></span> <a href="#">{{ job.company }}</a></div>
+                  <div><span class="icon-my_location"></span> <span>{{ job.Location }}</span></div>
+                </div>
+              </div>
+
+              <div class="ml-auto d-flex">
+                {% if user.is_authenticated and user.is_candidate %}
+                  <a href="{% url 'comapnyjobs' %}" class="btn btn-primary py-2 mr-1">Apply Job</a>
+                {% else %}
+                  <a href="{% url 'register' %}" class="btn btn-primary py-2 mr-1">Apply Job</a>
+                {% endif %}
+                <a href="#" class="btn btn-secondary rounded-circle btn-favorite d-flex align-items-center icon">
+                  <span class="icon-heart"></span>
+                </a>
+              </div>
+            </div>
+          </div><!-- end -->
+
+        {% endfor %}
+
+
+        <div class="row">
+          <div class="col-md-12 ftco-animate">
+
+            <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+
+              <div class="mb-4 mb-md-0 mr-5">
+                <div class="job-post-item-header d-flex align-items-center">
+                  <h2 class="mr-3 text-black h3">Frontend Development</h2>
+                  <div class="badge-wrap">
+                   <span class="bg-primary text-white badge py-2 px-3">Partime</span>
+                  </div>
+                </div>
+                <div class="job-post-item-body d-block d-md-flex">
+                  <div class="mr-3"><span class="icon-layers"></span> <a href="#">Facebook, Inc.</a></div>
+                  <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
+                </div>
+              </div>
+
+              <div class="ml-auto d-flex">
+                <a href="#" class="btn btn-primary py-2 mr-1">Apply Job</a>
+                <a href="#" class="btn btn-secondary rounded-circle btn-favorite d-flex align-items-center icon">
+                  <span class="icon-heart"></span>
+                </a>
+              </div>
+            </div>
+          </div><!-- end -->
+
+          <div class="col-md-12 ftco-animate">
+            <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+
+              <div class="mb-4 mb-md-0 mr-5">
+               <div class="job-post-item-header d-flex align-items-center">
+                 <h2 class="mr-3 text-black h4">Full Stack Developer</h2>
+                 <div class="badge-wrap">
+                  <span class="bg-warning text-white badge py-2 px-3">Full Time</span>
+                 </div>
+               </div>
+               <div class="job-post-item-body d-block d-md-flex">
+                 <div class="mr-3"><span class="icon-layers"></span> <a href="#">Google, Inc.</a></div>
+                 <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
+               </div>
+              </div>
+
+              <div class="ml-auto d-flex">
+                <a href="#" class="btn btn-primary py-2 mr-1">Apply Job</a>
+                <a href="#" class="btn btn-danger rounded-circle btn-favorite d-flex align-items-center">
+                  <span class="icon-heart"></span>
+                </a>
+              </div>
+
+            </div>
+          </div> <!-- end -->
+          <div class="col-md-12 ftco-animate">
+           <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+
+              <div class="mb-4 mb-md-0 mr-5">
+               <div class="job-post-item-header d-flex align-items-center">
+                 <h2 class="mr-3 text-black h4">Open Source Interactive Developer</h2>
+                 <div class="badge-wrap">
+                  <span class="bg-info text-white badge py-2 px-3">Freelance</span>
+                 </div>
+               </div>
+               <div class="job-post-item-body d-block d-md-flex">
+                 <div class="mr-3"><span class="icon-layers"></span> <a href="#">New York Times</a></div>
+                 <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
+               </div>
+              </div>
+
+              <div class="ml-auto d-flex">
+                <a href="#" class="btn btn-primary py-2 mr-1">Apply Job</a>
+                <a href="#" class="btn btn-secondary rounded-circle btn-favorite d-flex align-items-center icon">
+                  <span class="icon-heart"></span>
+                </a>
+              </div>
+           </div>
+         </div> <!-- end -->
+         <div class="col-md-12 ftco-animate">
+
+           <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+
+              <div class="mb-4 mb-md-0 mr-5">
+               <div class="job-post-item-header d-flex align-items-center">
+                 <h2 class="mr-3 text-black h4">Frontend Development</h2>
+                 <div class="badge-wrap">
+                  <span class="bg-secondary text-white badge py-2 px-3">Internship</span>
+                 </div>
+               </div>
+               <div class="job-post-item-body d-block d-md-flex">
+                 <div class="mr-3"><span class="icon-layers"></span> <a href="#">Facebook, Inc.</a></div>
+                 <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
+               </div>
+              </div>
+
+              <div class="ml-auto d-flex">
+                <a href="#" class="btn btn-primary py-2 mr-1">Apply Job</a>
+                <a href="#" class="btn btn-secondary rounded-circle btn-favorite d-flex align-items-center icon">
+                  <span class="icon-heart"></span>
+                </a>
+              </div>
+           </div>
+         </div> <!-- end -->
+         <div class="col-md-12 ftco-animate">
+           <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+
+              <div class="mb-4 mb-md-0 mr-5">
+               <div class="job-post-item-header d-flex align-items-center">
+                 <h2 class="mr-3 text-black h4">Open Source Interactive Developer</h2>
+                 <div class="badge-wrap">
+                  <span class="bg-danger text-white badge py-2 px-3">Temporary</span>
+                 </div>
+               </div>
+               <div class="job-post-item-body d-block d-md-flex">
+                 <div class="mr-3"><span class="icon-layers"></span> <a href="#">New York Times</a></div>
+                 <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
+               </div>
+              </div>
+
+              <div class="ml-auto d-flex">
+                <a href="#" class="btn btn-primary py-2 mr-1">Apply Job</a>
+                <a href="#" class="btn btn-secondary rounded-circle btn-favorite d-flex align-items-center icon">
+                  <span class="icon-heart"></span>
+                </a>
+              </div>
+           </div>
+         </div> <!-- end -->
+         <div class="col-md-12 ftco-animate">
+
+            <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+
+              <div class="mb-4 mb-md-0 mr-5">
+                <div class="job-post-item-header d-flex align-items-center">
+                  <h2 class="mr-3 text-black h3">Frontend Development</h2>
+                  <div class="badge-wrap">
+                   <span class="bg-primary text-white badge py-2 px-3">Partime</span>
+                  </div>
+                </div>
+                <div class="job-post-item-body d-block d-md-flex">
+                  <div class="mr-3"><span class="icon-layers"></span> <a href="#">Facebook, Inc.</a></div>
+                  <div><span class="icon-map-marker"></span> <span>Western City, UK</span></div>
+                </div>
+              </div>
+
+              <div class="ml-auto d-flex">
+                <a href="#" class="btn btn-primary py-2 mr-1">Apply Job</a>
+                <a href="#" class="btn btn-secondary rounded-circle btn-favorite d-flex align-items-center icon">
+                  <span class="icon-heart"></span>
+                </a>
+              </div>
+            </div>
+          </div><!-- end -->
+
+          <div class="col-md-12 ftco-animate">
+            <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+
+              <div class="mb-4 mb-md-0 mr-5">
+               <div class="job-post-item-header d-flex align-items-center">
+                 <h2 class="mr-3 text-black h4">Full Stack Developer</h2>
+                 <div class="badge-wrap">
+                  <span class="bg-warning text-white badge py-2 px-3">Full Time</span>
+                 </div>
+               </div>
+               <div class="job-post-item-body d-block d-md-flex">
+                 <div class="mr-3"><span class="icon-layers"></span> <a href="#">Google, Inc.</a></div>
+                 <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
+               </div>
+              </div>
+
+              <div class="ml-auto d-flex">
+                <a href="#" class="btn btn-primary py-2 mr-1">Apply Job</a>
+                <a href="#" class="btn btn-secondary rounded-circle btn-favorite d-flex align-items-center icon">
+                  <span class="icon-heart"></span>
+                </a>
+              </div>
+
+            </div>
+          </div> <!-- end -->
+          <div class="col-md-12 ftco-animate">
+           <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+
+              <div class="mb-4 mb-md-0 mr-5">
+               <div class="job-post-item-header d-flex align-items-center">
+                 <h2 class="mr-3 text-black h4">Open Source Interactive Developer</h2>
+                 <div class="badge-wrap">
+                  <span class="bg-info text-white badge py-2 px-3">Freelance</span>
+                 </div>
+               </div>
+               <div class="job-post-item-body d-block d-md-flex">
+                 <div class="mr-3"><span class="icon-layers"></span> <a href="#">New York Times</a></div>
+                 <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
+               </div>
+              </div>
+
+              <div class="ml-auto d-flex">
+                <a href="#" class="btn btn-primary py-2 mr-1">Apply Job</a>
+                <a href="#" class="btn btn-secondary rounded-circle btn-favorite d-flex align-items-center icon">
+                  <span class="icon-heart"></span>
+                </a>
+              </div>
+           </div>
+         </div> <!-- end -->
+         <div class="col-md-12 ftco-animate">
+
+           <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+
+              <div class="mb-4 mb-md-0 mr-5">
+               <div class="job-post-item-header d-flex align-items-center">
+                 <h2 class="mr-3 text-black h4">Frontend Development</h2>
+                 <div class="badge-wrap">
+                  <span class="bg-secondary text-white badge py-2 px-3">Internship</span>
+                 </div>
+               </div>
+               <div class="job-post-item-body d-block d-md-flex">
+                 <div class="mr-3"><span class="icon-layers"></span> <a href="#">Facebook, Inc.</a></div>
+                 <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
+               </div>
+              </div>
+
+              <div class="ml-auto d-flex">
+                <a href="#" class="btn btn-primary py-2 mr-1">Apply Job</a>
+                <a href="#" class="btn btn-secondary rounded-circle btn-favorite d-flex align-items-center icon">
+                  <span class="icon-heart"></span>
+                </a>
+              </div>
+           </div>
+         </div> <!-- end -->
+         <div class="col-md-12 ftco-animate">
+           <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+
+              <div class="mb-4 mb-md-0 mr-5">
+               <div class="job-post-item-header d-flex align-items-center">
+                 <h2 class="mr-3 text-black h4">Open Source Interactive Developer</h2>
+                 <div class="badge-wrap">
+                  <span class="bg-danger text-white badge py-2 px-3">Temporary</span>
+                 </div>
+               </div>
+               <div class="job-post-item-body d-block d-md-flex">
+                 <div class="mr-3"><span class="icon-layers"></span> <a href="#">New York Times</a></div>
+                 <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
+               </div>
+              </div>
+
+              <div class="ml-auto d-flex">
+                <a href="#" class="btn btn-primary py-2 mr-1">Apply Job</a>
+                <a href="#" class="btn btn-secondary rounded-circle btn-favorite d-flex align-items-center icon">
+                  <span class="icon-heart"></span>
+                </a>
+              </div>
+           </div>
+         </div> <!-- end -->
+        </div>
+        <!-- Pagination of recent job posts -->
+        <div class="row mt-5">
+          <div class="col text-center">
+            <div class="block-27">
+              <ul>
+                <li><a href="#">&lt;</a></li>
+                <li class="active"><span>1</span></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&gt;</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   <!-- Recebt job post ends -->
+
+   <!-- Faqs -->
+
+    <section class="ftco-section bg-light" id="faqs">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-10 heading-section text-center ftco-animate">
+            <span class="subheading"><h2>Frequently Asked <span>Questions</span> </h2></span>
+            <br>
+            <!-- Question 1 -->
+            <div>
+                <button class="faq_accordion">
+                  <h5>Why are we working on Job Buddy? <span class="accordian_icon"><i class="fas fa-plus-circle"></i> </span></h5>
+                </button>
+                <div class="panel">
+                  <p> <h6>These days companies face a unique challenge of finding out the relevant CV from the bunch of applications against a job opening. The dearth of skilled recruiters aggravate the pain and they  end up hiring from a small pool of CVs which are selected randomly. More often that not, we  miss out on the most relevant profile for the position.
+                    This leads to bad selection, higher attrition and less employee engagement. </h6></p>
+                </div>
+            </div>
+              <br>
+            <!-- Question 2 -->
+              <div>
+                <button class="faq_accordion">
+                  <h5>What’s in it for the Freelancers? <span class="accordian_icon"><i class="fas fa-plus-circle"></i> </span></h5>
+                </button>
+                <div class="panel">
+                  <p>
+                      <h6>Freelancers will get a commission for every position which is closed by them.
+                          They can work on multiple openings at a time. Commission for a role will be similar to what a company would give for referral to its employees.  On an average, if a freelancer closes even 5
+                          positions in a month with average of Rs 20,000 commission, she’ll get Rs 1,00,000 over and above her normal job. </h6>
+                  </p>
+                </div>
+              </div>
+              <br>
+              <!-- Question 3 -->
+              <div>
+                <button class="faq_accordion">
+                    <h5>Why should companies work with Job Buddy? <span class="accordian_icon"><i class="fas fa-plus-circle"></i> </span></h5>
+                 </button>
+                 <div class="panel">
+                   <p>
+                      <h6>Companies usually follow 2 models for hiring: Vendor Sourcing and Internal Sourcing. While Vendor Sourcing normally costs north of 8%, internal sourcing has challenges of inadequate or insufficient CVs.  Job buddy brings the best of both models. It provides relevant provides at the cost of internal referrals(around 2%). So,
+                         companies would want to work with us to reduce their sourcing cost and efforts. </h6>
+                   </p>
+                 </div>
+              </div>
+              <br>
+              <!-- Question 4 -->
+              <div>
+                <button class="faq_accordion">
+                  <h5>Why would candidates apply through Job Buddy? <span class="accordian_icon"><i class="fas fa-plus-circle"></i> </span></h5>
+                 </button>
+                <div class="panel">
+                  <p>
+                      <p> <h6>Candidates normally go through cumbersome process of application on each website such as Company’s career pages, Naukri, IIM Jobs etc. While they apply for the role, they are not really sure what is the role all about. Uncertainty about the role leads to irrelevant applications. Post the application, candidates are not aware about the status of their application. If it got selected, rejected or it was totally irrelevant. But in case of Job Buddy, candidate would be aware about the progress of their application. They can contact the freelance recruiters working on his profile in case of any query. So, platform would provide a
+                        human touch to the candidates which is missing from all the current offerings.</h6> </p>
+                  </p>
+                </div>
+              </div>
+              <br>
+              <!-- Question 5 -->
+              <div>
+                <button class="faq_accordion">
+                    <h5>Who can be a company ? <span class="accordian_icon"><i class="fas fa-plus-circle"></i>
+                </button>
+                <div class="panel">
+                    <p><h6>Company can be any company, looking for hasle-free recruitment of candidates. We can have unlimited recruiter profiles from one company. Click <a href="#">here</a> to register your company account.
+                      After successful creation of account company recruiter can post current opening.</h6></p>
+                </div>
+              </div>
+              <br>
+              <!-- Question 6 -->
+              <div>
+                <button class="faq_accordion">
+                    <h5>Who can be a Freelancer ? <span class="accordian_icon"><i class="fas fa-plus-circle"></i> </span></h5>
+                </button>
+                <div class="panel">
+                  <p>
+                      <h6>Freelancer can be any individual who wants to make some extra money.
+                          Commission for a role will be similar to what a company would give for referral to its
+                          employee. <strong>A person CANNOT act as a freelancer for the same company in which He/She
+                           is currently working</strong> .To register as a Freelancer click <a href="#">here</a>.</h6>
+                  </p>
+                </div>
+              </div>
+              <br>
+              <!-- Question 7 -->
+              <div>
+                <button class="faq_accordion">
+                    <h5>Who can be a candidate ? <span class="accordian_icon"><i class="fas fa-plus-circle"></i> </span></h5>
+                </button>
+                <div class="panel">
+                  <p>
+                      <h6>Candidate can be any individual seeking a job.
+                      He/She can register <a href="#">here</a> and apply for the available jobs.</h6>
+                  </p>
+                </div>
+              </div>
+              <br>
+              <!-- Question 8 -->
+              <div>
+                <button class="faq_accordion">
+                  <h5> How It Works <span class="accordian_icon"><i class="fas fa-plus-circle"></i> </span></h5>
+                </button>
+                  <div class="panel">
+                    <p>
+                      <h6>With Job Buddy, we are working to help companies find the right candidate at the lowest
+                       possible cost with minimum effort using natural language processing and AI.
+                       Job Buddy is a marketplace where Companies meet candidates via seasoned recruiters.
+                       Here, companies post their job requirements which is visible to both candidates and
+                       the freelance recruiters. It will stack rank all the candidates available for the role.
+                       Candidates apply for the jobs, but it is visible to the Company only after one of the
+                       freelance recruiters on the platform has vetted it and found it suitable for the role.
+                       This way, company will get only the CVs which are relevant for the profile.
+                        Even the recruiters can source CVs for the opening and attach it on the portal.</h6>
+                    </p>
+                  </div>
+              </div>
+            <br>
+            <!-- Question ends -->
+          </div>
+    </section>
+    <!-- FAQs Section ends -->
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container" id="footer-contact">
+        <div class="row mb-5">
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">About</h2>
+              <p>With Job Buddy, we are working to help companies find the right candidate at the lowest
+                possible cost with minimum effort using natural language processing and AI.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                <li class="ftco-animate" data-aos="zoom-in-up"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate" data-aos="zoom-in-up"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate" data-aos="zoom-in-up"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <!-- <h2 class="ftco-heading-2">Employers</h2> -->
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">Home</a></li>
+                <li><a href="#" class="py-2 d-block">Register as Candidate</a></li>
+                <li><a href="#" class="py-2 d-block">Post a Job</a></li>
+                <li><a href="#" class="py-2 d-block">Register as Freelancer</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <!-- <h2 class="ftco-heading-2">Workers</h2> -->
+              <ul class="list-unstyled">
+                <li><a href="#faqs" class="py-2 d-block">FAQs</a></li>
+                <li><a href="#" class="py-2 d-block">Terms and Conditions</a></li>
+                <li><a href="#" class="py-2 d-block">Privacy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Have a Questions?</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">INDIA</span></li>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 392 3929 210</span></a></li>
+                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">BETA</a>
+  <!--  Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+
+{% endblock content %}

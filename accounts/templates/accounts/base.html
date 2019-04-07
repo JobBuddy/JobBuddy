@@ -1,0 +1,245 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JobBuddy - Buddy for your dream job</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="{% static 'accounts/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/css/animate.css' %}">
+
+    <link rel="stylesheet" href="{% static 'accounts/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'accounts/css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'accounts/css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'accounts/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/css/jquery.timepicker.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'accounts/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">JobBuddy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#footer-contact" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#faqs" class="nav-link">FAQs</a></li>
+            <li class="nav-item"><a href="#footer-contact" class="nav-link">Contact</a></li>
+            {% if user.is_authenticated and user.is_company %}
+              <li class="nav-item cta mr-md-2"><a href="{% url 'companyjobs' %}"
+               class="nav-link">Post a Job</a></li>
+            {% else %}
+              <li class="nav-item cta mr-md-2"><a href="{% url 'company_login' %}"
+               class="nav-link">Post a Job</a></li>
+            {% endif %}
+            <li class="nav-item cta cta-colored mr-md-2"><a href="{% url 'candidate' %}" class="nav-link">Want a Job</a></li>
+            <li class="nav-item cta cta-colored"><a href="#" class="nav-link">Review a Job</a></li>
+
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- <div class="hero-wrap js-fullheight" style="background-image: url({% static 'accounts/images/bg_2.png' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true" style="height: 747px;">
+          <div class="col-xl-10 ftco-animate mb-5 pb-5" data-scrollax=" properties: { translateY: '70%' }">
+            <p class="mb-4 mt-5 pt-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+              Millions jobs, Easy Job Listing, Freelance Recruiters
+            </p>
+            <h1 class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Your Job <br><span>BUDDY is Here</span></h1>
+
+            <div class="ftco-search">
+              <div class="row">
+                <div class="col-md-12 nav-link-wrap">
+                  <div class="nav nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active mr-md-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Find a Job</a>
+
+                    <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Find a Candidate</a>
+
+                  </div>
+                </div>
+                <div class="col-md-12 tab-wrap">
+
+                  <div class="tab-content p-4" id="v-pills-tabContent">
+
+                    <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
+                      <form action="#" class="search-job">
+                        <div class="row">
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <div class="icon"><span class="icon-briefcase"></span></div>
+                                <input type="text" class="form-control" placeholder="eg. Garphic. Web Developer">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <div class="select-wrap">
+                                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                  <select name="" id="" class="form-control">
+                                    <option value="">Category</option>
+                                    <option value="">Full Time</option>
+                                    <option value="">Part Time</option>
+                                    <option value="">Freelance</option>
+                                    <option value="">Internship</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <div class="icon"><span class="icon-map-marker"></span></div>
+                                <input type="text" class="form-control" placeholder="Location">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <input type="submit" value="Search" class="form-control btn btn-primary">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-performance-tab">
+                      <form action="#" class="search-job">
+                        <div class="row">
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <div class="icon"><span class="icon-user"></span></div>
+                                <input type="text" class="form-control" placeholder="eg. Adam Scott">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <div class="select-wrap">
+                                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                  <select name="" id="" class="form-control">
+                                    <option value="">Category</option>
+                                    <option value="">Full Time</option>
+                                    <option value="">Part Time</option>
+                                    <option value="">Freelance</option>
+                                    <option value="">Internship</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <div class="icon"><span class="icon-map-marker"></span></div>
+                                <input type="text" class="form-control" placeholder="Location">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md">
+                            <div class="form-group">
+                              <div class="form-field">
+                                <input type="submit" value="Search" class="form-control btn btn-primary">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+
+                      <form method="post">
+                      	{% csrf_token %}
+                      	<h3 class="legend">Search Using Job Title</h3>
+                            <div class="input">
+                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                                <input type="text" placeholder="Software Developer" name="job_title" required />
+                            </div>
+                             <div class="input">
+                                <span class="fa fa-key" aria-hidden="true"></span>
+                                <input type="password" placeholder="Password" name="password" required />
+                            </div>
+                            {% if form.errors %}
+                            Error messaging
+                            <div id="errors">
+                                <div class="inner">
+                                    <p class="alert">There were some errors in the information you entered. Please correct the following:</p>
+                                    {{ form.non_field_errors }}
+                                    <ul>
+                                        {% for field in form %}
+                                            {% if field.errors %}<li>{{ field.label }}: {{ field.errors|striptags }}</li>{% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            /Error messaging
+                            {% endif %}
+                            <div class="input">
+                                <button type="submit" class="btn submit">Search</button>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    {% if messages %}
+      {% for messages in messages %}
+        <div class="alert alert-{{ messages.tags }}"></div>
+          {{ message }}
+      {% endfor %}
+    {% endif %}
+    {% block content %}{% endblock %}
+
+
+
+  <script src="{% static 'accounts/js/jquery.min.js' %}"></script>
+  <script src="{% static 'accounts/js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'accounts/js/popper.min.js' %}"></script>
+  <script src="{% static 'accounts/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'accounts/js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'accounts/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'accounts/js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'accounts/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'accounts/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'accounts/js/aos.js' %}"></script>
+  <script src="{% static 'accounts/js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'accounts/js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'accounts/js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'accounts/js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'accounts/js/google-map.js' %}"></script>
+  <script src="{% static 'accounts/js/main.js' %}"></script>
+
+  </body>
+</html>

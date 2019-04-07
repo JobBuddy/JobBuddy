@@ -1,0 +1,34 @@
+{% extends 'accounts/recruiter_home.html' %}
+{% block content %}
+<form method="post"  >
+	{% csrf_token %}
+	<h3 class="legend">Login Here</h3>
+        <div class="input">
+            <span class="fa fa-envelope-o" aria-hidden="true"></span>
+            <input type="text" placeholder="username" name="username" required />
+        </div>
+        <div class="input">
+            <span class="fa fa-key" aria-hidden="true"></span>
+            <input type="password" placeholder="Password" name="password" required />
+        </div>
+        {% if form.errors %}
+    <!-- Error messaging -->
+    <div id="errors">
+        <div class="inner">
+            <p class="alert">There were some errors in the information you entered. Please correct the following:</p>
+            {{ form.non_field_errors }}
+            <ul>
+                {% for field in form %}
+                    {% if field.errors %}<li>{{ field.label }}: {{ field.errors|striptags }}</li>{% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!-- /Error messaging -->
+{% endif %}
+        <div class="input">
+            <button type="submit" class="btn submit">Login</button>
+            </div>
+
+</form>
+{% endblock %}
