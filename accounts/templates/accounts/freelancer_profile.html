@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Civic - CV Resume</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Civic - CV Resume">
+	<meta name="keywords" content="resume, civic, onepage, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+	<link href="{% static 'accounts/images/b4.jpg' %}" rel="shortcut icon"/>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
+
+	<!-- Stylesheets -->
+
+	<link rel="stylesheet" href="{% static 'accounts/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'accounts/css/font-awesome.min.css'%} ">
+	<link rel="stylesheet" href="{% static 'accounts/css/flaticon.css'%} ">
+	<link rel="stylesheet" href="{% static 'accounts/css/owl.carousel.css'%} ">
+	<link rel="stylesheet" href="{% static 'accounts/css/magnific-popup.css'%} ">
+	<link rel="stylesheet" href="{% static 'accounts/css/style2.css' %}">
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'app_home' %}">JobBuddy</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="{% url 'app_home' %}" class="nav-link">Home</a></li>
+          <li class="nav-item cta cta-colored"><a href="{% url 'app_home' %}" class="nav-link">Review a Job</a></li>
+          <li class="nav-item">
+            <form action="{% url 'freelancer_logout' %}" method="POST">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-primary">Log out</button>
+            </form>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+	<!-- Hero section start -->
+	<section class="hero-section spad">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xl-10 offset-xl-1">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="hero-text">
+								<h2>{{ Name }}</h2>
+								<p>{{ Name }}</p>
+							</div>
+							<div class="hero-info">
+								<h2>General Info</h2>
+								<ul>
+									<li><span>PAN</span>{{ PAN }}</li>
+									<li><span>Location</span>{{ Location }}</li>
+									<li><span>E-mail</span>{{ curr_user.email }}</li>
+									<li><span>Phone </span>{{ Phone }}</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<figure class="hero-image">
+								<img src="{% static 'accounts/images/hero.jpg' %}" alt="5">
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero section end -->
+
+
+
+	<!-- Footer section start -->
+	<footer class="footer-section">
+		<div class="container text-center">
+			<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">JobBuddy</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</div>
+		</div>
+	</footer>
+	<!-- Footer section end -->
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="{% static 'accounts/js/jquery-2.1.4.min.js' %} "></script>
+	<script src="{% static 'accounts/js/bootstrap.min.js' %} "></script>
+	<script src="{% static 'accounts/js/owl.carousel.min.js' %} "></script>
+	<script src="{% static 'accounts/js/magnific-popup.min.js' %} "></script>
+	<script src="{% static 'accounts/js/circle-progress.min.js' %} "></script>
+	<script src="{% static 'accounts/js/main2.js' %} "></script>
+</body>
+</html>

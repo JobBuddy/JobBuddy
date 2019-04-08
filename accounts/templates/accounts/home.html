@@ -146,66 +146,6 @@
                           </div>
                         </div>
                       </form>
-
-
-
-                      <!-- <form method="post">
-                        {% csrf_token %}
-                        <h3 class="legend">Search Using Job Title</h3>
-                            <div class="input">
-                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                                <label for="job_title">Job Title</label>
-                                <input type="text" placeholder="Software Developer" name="job_title" />
-                            </div>
-                            <br>
-                            <div class="input">
-                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                                <label for="company">Company</label>
-                                <input type="text" placeholder="OLA" name="company"/>
-                            </div>
-                            <br>
-                            <div class="input">
-                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                                <label for="job_type">Job Type</label>
-                                <input type="text" placeholder="Internship" name="job_type"/>
-                            </div>
-                            <br>
-                            <div class="input">
-                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                                <label for="Location">Location</label>
-                                <input type="text" placeholder="Ranchi" name="Location"/>
-                            </div>
-                            <br>
-                            <div class="input">
-                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                                <label for="Qualification">Qualification</label>
-                                <input type="text" placeholder="Software Developer" name="Qualification"/>
-                            </div>
-                            <br>
-                            <div class="input">
-                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                                <label for="min_exp">Minimum experience</label>
-                                <input type="text" placeholder="Software Developer" name="min_exp"/>
-                            </div>
-                            {% if form.errors %}
-                           Error messaging
-                            <div id="errors">
-                                <div class="inner">
-                                    <p class="alert">There were some errors in the information you entered. Please correct the following:</p>
-                                    {{ form.non_field_errors }}
-                                    <ul>
-                                        {% for field in form %}
-                                            {% if field.errors %}<li>{{ field.label }}: {{ field.errors|striptags }}</li>{% endif %}
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                            </div>
-                             /Error messaging
-                            {% endif %}
-                            <div class="input">
-                                <button type="submit" class="btn submit">Search</button>
-                            </div>
-                          </form> -->
                     </div>
                   </div>
                 </div>
@@ -326,52 +266,7 @@
           </div>
           <!-- company modal ends -->
       </div>
-    </section>
 
-    <section class="ftco-section ftco-counter">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <span class="subheading">Categories work wating for you</span>
-            <h2 class="mb-4"><span>Current</span> Job Posts</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 ftco-animate">
-            <ul class="category">
-              <li><a href="#">Web Development <span class="number" data-number="1000">0</span></a></li>
-              <li><a href="#">Graphic Designer <span class="number" data-number="1000">0</span></a></li>
-              <li><a href="#">Multimedia <span class="number" data-number="2000">0</span></a></li>
-              <li><a href="#">Advertising <span class="number" data-number="900">0</span></a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 ftco-animate">
-            <ul class="category">
-              <li><a href="#">Education &amp; Training <span class="number" data-number="3500">0</span></a></li>
-              <li><a href="#">English <span class="number" data-number="1560">0</span></a></li>
-              <li><a href="#">Social Media <span class="number" data-number="1000">0</span></a></li>
-              <li><a href="#">Writing <span class="number" data-number="2500">0</span></a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 ftco-animate">
-            <ul class="category">
-              <li><a href="#">PHP Programming <span class="number" data-number="5500">0</span></a></li>
-              <li><a href="#">Project Management <span class="number" data-number="2000">0</span></a></li>
-              <li><a href="#">Finance Management <span class="number" data-number="800">0</span></a></li>
-              <li><a href="#">Office &amp; Admin <span class="number" data-number="7000">0</span></a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 ftco-animate">
-            <ul class="category">
-              <li><a href="#">Web Designer <span><span class="number" data-number="8000">0</span></span></a></li>
-              <li><a href="#">Customer Service <span class="number" data-number="4000">0</span></a></li>
-              <li><a href="#">Marketing &amp; Sales <span class="number" data-number="3300">0</span></a></li>
-              <li><a href="#">Software Development <span class="number" data-number="1356">0</span></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
 <!-- Recent job post section -->
     <section class="ftco-section bg-light">
       <div class="container">
@@ -382,7 +277,6 @@
           </div>
         </div>
         <!-- Recent job posts -->
-
 
         {% for job in job_filter %}
             <div class="col-md-12 ftco-animate">

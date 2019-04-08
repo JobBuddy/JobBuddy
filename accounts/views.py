@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Jobs, Company, Freelancer
 from django.urls import reverse
 from .forms import UserForm, CandidateProfileForm
+from .models import User
 # from .forms import SearchForm
 
 
@@ -200,7 +201,14 @@ def recruiter_profile(request):
 
 @login_required
 def freelancer_profile(request):
-    return render(request, 'accounts/freelancer_profile.html', {})
+    curr_user = request.user
+    user_object = User.objects.get(email=curr_user.email)
+    Name = user_object.freelancer.Name
+    Phone = user_object.freelancer.Phone
+    Qualification = user_object.freelancer.Qualification
+    PAN = user_object.freelancer.PAN
+    Location = user_object.freelancer.Location
+    return render(request, 'accounts/freelancer_profile.html', {'curr_user':curr_user, 'Name':Name, 'Phone' : Phone, 'Qualification' : Qualification, 'Location':Location, 'PAN':PAN})
 
 
 def freelancer_login(request):
@@ -210,7 +218,7 @@ def freelancer_login(request):
         user = authenticate(username=username, password=password)
         if user and user.is_freelancer:
             login(request, user)
-            return redirect('app_home')
+            return redirect('freelancer_profile')
         else:
             return HttpResponse("Invalid login details given")
 
@@ -331,3 +339,7 @@ def user_logout(request):
     if request.method == "POST":
         logout(request)
         return HttpResponseRedirect(reverse('candidate'))
+
+def candidate_home(request):
+    curr_user = request.user
+    return render(request, 'accounts/candidate_profile.html', {'curr_user' : curr_user})

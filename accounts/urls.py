@@ -15,6 +15,7 @@ urlpatterns = [
 
     path('freelancer_profile', views.freelancer_profile, name="freelancer_profile"),
     path('freelancer_login', views.freelancer_login, name="freelancer_login"),
+    path('freelancer_logout', auth_views.LogoutView.as_view(template_name="accounts/home.html"), name="freelancer_logout"),
     path('freelancer_register', views.freelancer_register, name="freelancer_register"),
     path('freelancer_home', views.freelancer_home, name="freelancer_home"),
     path('freelancer_forgetpassword', views.freelancer_forgetpassword, name="freelancer_forgetpassword"),
@@ -35,6 +36,8 @@ urlpatterns = [
     path('user_login/', views.user_login, name='user_login'),
     path('success/', views.success, name='success'),
     path('user_logout/', views.user_logout, name='user_logout'),
+
+    path('candidate_home/', views.candidate_home, name='candidate_home'),
 
 
 ]

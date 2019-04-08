@@ -24,7 +24,7 @@ class CompanyRegisterForm(forms.ModelForm):
 
     class Meta:
         model = Company
-        fields = ["company_name", "sector", "website", "about"]
+        fields = ["sector", "website", "about"]
 
     # @transaction.atomic
     # def save(self):
@@ -46,7 +46,7 @@ class RecruiterRegisterForm(forms.ModelForm):
 
     class Meta:
         model =  Recruiter
-        fields = ["Name", "Phone", "Company_name", "PAN"]
+        fields = ["Name", "Phone", "PAN"]
     #
     # @transaction.atomic
     # def save(self):
