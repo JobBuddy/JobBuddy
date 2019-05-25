@@ -1,2 +1,2 @@
 # JobBuddy
-Website for JoB BuddY using django
+An interactive and innovative job portal.
